@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>Chronicles of Exoplanet Exploration</title>
+</head>
+<body>
+    <header>
+        <h1>ExoExplore </h1>
+    </header>
+
+    <main>
+        <section id="menu">
+            <p id="ph2">Select An Option</p>
+            <button onclick="startApp()">Explore Planets</button>
+            <button onclick="window.location.href='quiz.html'">Take A Quiz</button>
+
+        </section>
+
+        <section id="exoplanet-section" style="display: none;">
+            <h2 id="mode-title"></h2>
+            <div id="exoplanet-content">
+                <img id="exoplanet-image" alt="Exoplanet Image" />
+                <p id="exoplanet-description"></p>
+            </div>
+            <button onclick="loadNewExoplanet()">New Exoplanet</button>
+            <button onclick="homepage()">Homepage</button>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
