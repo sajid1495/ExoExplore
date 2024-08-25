@@ -9,7 +9,6 @@ const questions = [
         options: ["Venus", "Mars", "Mercury", "Earth"],
         correctAnswer: 1
     },
-    // Add more questions as needed
 ];
 
 let currentQuestionIndex = 0;
@@ -19,7 +18,7 @@ function loadQuestion() {
     document.getElementById("question-title").textContent = currentQuestion.question;
 
     const optionsContainer = document.getElementById("options-container");
-    optionsContainer.innerHTML = ''; // Clear previous options
+    optionsContainer.innerHTML = ''; 
 
     currentQuestion.options.forEach((option, index) => {
         const optionElement = document.createElement("div");
@@ -59,19 +58,15 @@ function submitAnswer() {
 function showHomepageButton() {
     const quizSection = document.getElementById("quiz-section");
 
-    // Hide the submit button
     document.getElementById("submit-button").style.display = "none";
 
-    // Create a button to go to the homepage
     const homeButton = document.createElement("button");
     homeButton.textContent = "Go to Homepage";
     homeButton.onclick = function () {
         window.location.href = 'index.html';
     };
 
-    // Append the button to the quiz section
     quizSection.appendChild(homeButton);
 }
 
-// Load the first question when the page loads
 window.onload = loadQuestion;

@@ -1,15 +1,21 @@
 const exoplanets = [
     {
-        image: 'exoplanet1.jpg',
-        description: 'Exoplanet 1: A gas giant orbiting a distant star, with a thick atmosphere of hydrogen and helium.'
+        image: 'images/toi-6255-b.png',
+        planet: 'TOI-6255 b',
+        description: `A potentially rocky world, larger than Earth.`,
+        link: 'https://science.nasa.gov/exoplanet-catalog/toi-6255-b/'
     },
     {
-        image: 'exoplanet2.jpg',
-        description: 'Exoplanet 2: A rocky planet similar to Earth, located in the habitable zone of its star.'
+        image: 'images/hd-135694-b.png',
+        planet: 'HD 135694 b',
+        description: `A Neptune-like giant planet.`,
+        link: 'https://science.nasa.gov/exoplanet-catalog/hd-135694-b/'
     },
     {
-        image: 'exoplanet3.jpg',
-        description: 'Exoplanet 3: A water world with oceans covering the entire surface, potentially harboring life.'
+        image: 'images/gj-238-b.png',
+        planet: 'GJ 238 b',
+        description: `A rocky world outside our solar system.`,
+        link: 'https://science.nasa.gov/exoplanet-catalog/gj-238-b/'
     }
 ];
 
@@ -26,7 +32,9 @@ function startApp() {
 function loadNewExoplanet() {
     const exoplanet = exoplanets[currentExoplanetIndex];
     document.getElementById('exoplanet-image').src = exoplanet.image;
+    document.getElementById('exoplanet-name').textContent = exoplanet.planet;
     document.getElementById('exoplanet-description').textContent = exoplanet.description;
+    document.querySelector('a').setAttribute('href',exoplanet.link);
     
     currentExoplanetIndex = (currentExoplanetIndex + 1) % exoplanets.length;
 }

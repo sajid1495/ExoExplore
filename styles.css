@@ -61,7 +61,7 @@ h1 {
 }
 
 button {
-    margin-top: 100px;
+    margin-top: 10px;
     width: 220px;
     background-color: pink;
     color: black;
@@ -76,6 +76,22 @@ button:hover {
     background-color: palevioletred;
     box-shadow: 0 0 5px cyan, 0 0 25px cyan,
         0 0 50px cyan, 0 0 100px cyan;
+}
+
+a{
+    color: greenyellow;
+}
+
+a:hover{
+    color: cyan;
+    font-size: 20px;
+}
+
+#options-container div{
+    padding: 10px;
+    text-align: left;
+    font-size: 20px;
+    color: cyan;
 }
 
 @media (max-width: 600px) {
