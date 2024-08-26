@@ -1,15 +1,25 @@
+let score = 0
+let level = 1
+
+let Score = document.getElementById("score")
+Score.textContent += score
+
+let Level = document.getElementById('level')
+Level.textContent += level
+
 const questions = [
     {
-        question: "Which is the largest planet in our solar system?",
-        options: ["Earth", "Jupiter", "Mars", "Saturn"],
+        question: "What is an exoplanet?",
+        options: ["A planet within our solar system", "A planet that orbits a star outside our solar system", "A dwarf planet within the Kuiper Belt", "A moon of a gas giant planet"],
         correctAnswer: 1
     },
     {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Venus", "Mars", "Mercury", "Earth"],
+        question: "Which of the following exoplanet types is most similar to Earth in terms of size and composition?",
+        options: ["Hot Jupiter", "Super-Earth", "Gas giant", "Ice giant"],
         correctAnswer: 1
     },
 ];
+
 
 let currentQuestionIndex = 0;
 
@@ -39,6 +49,8 @@ function submitAnswer() {
 
         if (answerIndex === currentQuestion.correctAnswer) {
             alert("Correct!");
+            score += 10
+            Score.innerText = "Total Score:" + score
         } else {
             alert("Incorrect. The correct answer was " + currentQuestion.options[currentQuestion.correctAnswer]);
         }
@@ -48,12 +60,29 @@ function submitAnswer() {
             loadQuestion();
         } else {
             alert("Quiz Completed!");
-            showHomepageButton();
+            level += 1
+            Level.innerText = "Level:" + level
+            document.getElementById('quiz-section').innerHTML = `
+            <div id="congratulations">
+                <span class="balloon">🎈</span>
+                    Congratulations!
+                <span class="balloon">🎈</span>
+            </div>
+            <h2>You are one level up.</h2>
+            <a href="index.html"><button>Homepage</button></a>
+            `
         }
     } else {
         alert("Please select an option.");
     }
 }
+
+function homepage() {
+    document.getElementById("exoplanet-section").style.display = "none";
+
+    document.getElementById("menu").style.display = "block";
+}
+
 
 function showHomepageButton() {
     const quizSection = document.getElementById("quiz-section");

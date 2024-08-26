@@ -87,11 +87,53 @@ a:hover{
     font-size: 20px;
 }
 
+#quiz-section{
+    width: 600px;
+    margin: 0 auto;
+}
+
 #options-container div{
     padding: 10px;
     text-align: left;
     font-size: 20px;
     color: cyan;
+}
+
+p{
+    font-size: 20px;
+    color: orange;
+    font-weight: bold;
+    text-shadow: 1px 1px 20px gold;
+}
+
+#congratulations {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #ff4500;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.balloon {
+    font-size: 50px;
+    margin: 0 10px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.balloon:hover{
+    color: pink;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @media (max-width: 600px) {
