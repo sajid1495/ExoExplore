@@ -84,7 +84,8 @@ a{
 
 a:hover{
     color: cyan;
-    font-size: 20px;
+    font-size: 15px;
+    text-shadow: 1px 1px 10px gold;
 }
 
 #quiz-section{
@@ -125,7 +126,6 @@ p{
 .balloon:hover{
     color: pink;
 }
-
 
 @keyframes float {
     0%, 100% {
