@@ -99,3 +99,26 @@ function showHomepageButton() {
 }
 
 window.onload = loadQuestion;
+
+
+function speakPageContent() {
+    // Check if the browser supports the Web Speech API
+    if ('speechSynthesis' in window) {
+        // Get all the text content from the page
+        let textToRead = document.body.innerText;
+
+        // Create a new SpeechSynthesisUtterance object
+        let utterance = new SpeechSynthesisUtterance(textToRead);
+
+        // Set language and other options if needed
+        utterance.lang = 'en-US'; // Set language
+        utterance.rate = 1;       // Speed of speech
+        utterance.pitch = 1;      // Pitch of speech
+        utterance.volume = 1;     // Volume of speech
+
+        // Speak the text
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert("Your browser does not support text-to-speech.");
+    }
+}

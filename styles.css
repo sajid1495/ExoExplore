@@ -50,14 +50,36 @@ h1 {
     margin: auto;
 }
 
-#exoplanet-content {
-    margin-bottom: 20px;
+/* Basic container styling */
+.planet-data {
+    display: flex;
+    flex-direction: column;
+    /* Adds space between bricks */
+    max-width: 500px;
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Centers the container */
 }
 
-#exoplanet-image {
-    max-width: 100%;
-    height: auto;
+/* Styling each "brick" */
+.planet-data p {
+    background-color: #f2f2f2;
+    border: 2px solid #ccc;
     border-radius: 8px;
+    padding: 15px;
+    margin: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: orangered;
+    transition: transform 0.3s ease;
+    /* For hover effect */
+}
+
+/* Optional: Hover effect on each brick */
+.planet-data p:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
 }
 
 button {
@@ -76,16 +98,6 @@ button:hover {
     background-color: palevioletred;
     box-shadow: 0 0 5px cyan, 0 0 25px cyan,
         0 0 50px cyan, 0 0 100px cyan;
-}
-
-a{
-    color: greenyellow;
-}
-
-a:hover{
-    color: cyan;
-    font-size: 15px;
-    text-shadow: 1px 1px 10px gold;
 }
 
 #quiz-section{

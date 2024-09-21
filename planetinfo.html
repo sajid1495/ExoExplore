@@ -7,18 +7,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <title>Chronicles of Exoplanet Exploration</title>
+    <title>Exoplanet Information</title>
 </head>
 <body>
     <header>
-        <h1 class="text">ExoExplore</h1>
+        <h1 class="balloon">ExoExplore </h1>
     </header>
 
     <main>
-        <section id="menu">
-            <p id="ph2" class="balloon">Select An Option</p>
-            <button onclick="window.location.href='planetinfo.html'">Explore Planets</button>
-            <button onclick="window.location.href='quiz.html'">Take A Quiz</button>
+        <section id="exoplanet-section">
+            <div id="planetData" class="planet-data">
+                <!-- The planet data will be displayed here -->
+            </div>
+            <button id="nextButton">Next Planet</button>
+            <button onclick="homepage()">Homepage</button>
+            <button onclick="speakPlanetData()">Read Aloud</button>
         </section>
     </main>
 
