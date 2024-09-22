@@ -16,6 +16,12 @@ function displayPlanetData(index) {
     const planet = exoplanetData[index];
     const planetDataDiv = document.getElementById('planetData');
 
+
+    let plName = planet.pl_name;
+    let formattedName = plName.replace(/\s+/g, '-').toLowerCase();
+    console.log(formattedName); 
+    let link = `https://science.nasa.gov/exoplanet-catalog/${formattedName}/`;
+
     // Check if there is data to display
     if (planet) {
         planetDataDiv.innerHTML = `
@@ -25,6 +31,7 @@ function displayPlanetData(index) {
             <p><strong>Discovery Telescope:</strong> ${planet.disc_telescope}</p>
             <p><strong>Orbital Period (days):</strong> ${planet.pl_orbper}</p>
             <p><strong>Density (g/cm³):</strong> ${planet.pl_dens ?? 'Unknown'}</p>
+            <a class="button" href="${link}" target="_blank">Explore More</a>
         `;
     } else {
         planetDataDiv.innerHTML = `<p>No more planets to display.</p>`;
@@ -78,12 +85,3 @@ function speakPlanetData() {
         alert("Your browser does not support text-to-speech.");
     }
 }
-
-var typed = new Typed(".text", {
-    strings: ["ExoExplore"],
-    typeSpeed: 100,
-    backSpeed: 10,
-    backDelay: 100,
-    loop: true,
-});
-  
