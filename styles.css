@@ -149,6 +149,11 @@ p{
 }
 
 @media (max-width: 600px) {
+    body{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
     h1 {
         font-size: 34px;
     }
