@@ -112,6 +112,62 @@ button:hover {
         0 0 50px cyan, 0 0 100px cyan;
 }
 
+/* Button at the bottom right corner */
+.dev-info-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 10px;
+    width: 100px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dev-info-btn:hover {
+    background-color: #45a049;
+}
+
+/* Modal background (hidden by default) */
+.dev-info-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal content */
+.dev-info-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Close button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+
 #quiz-section{
     width: 600px;
     margin: 0 auto;

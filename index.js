@@ -85,3 +85,21 @@ function speakPlanetData() {
         alert("Your browser does not support text-to-speech.");
     }
 }
+
+// Function to show the developer info modal
+function showDevInfo() {
+    document.getElementById("devInfoModal").style.display = "block";
+}
+
+// Function to hide the developer info modal
+function hideDevInfo() {
+    document.getElementById("devInfoModal").style.display = "none";
+}
+
+// Hide the modal if the user clicks outside the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById("devInfoModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
