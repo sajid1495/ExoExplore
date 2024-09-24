@@ -11,15 +11,15 @@ fetch('data.txt')
         currentIndex++;
     });
 
+
 // Function to display the current planet data
 function displayPlanetData(index) {
     const planet = exoplanetData[index];
     const planetDataDiv = document.getElementById('planetData');
 
-
     let plName = planet.pl_name;
     let formattedName = plName.replace(/\s+/g, '-').toLowerCase();
-    console.log(formattedName); 
+    //console.log(formattedName); 
     let link = `https://science.nasa.gov/exoplanet-catalog/${formattedName}/`;
 
     // Check if there is data to display
