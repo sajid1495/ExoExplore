@@ -235,21 +235,89 @@ p{
     }
 }
 
-@media (max-width: 600px) {
-    body{
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-    h1 {
-        font-size: 34px;
+/* Responsive Styles for Tablets */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
     }
 
-    h2 {
-        font-size: 24px;
+    h1 {
+        font-size: 2rem;
+    }
+
+    #quiz-section {
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    #question-title {
+        font-size: 1.4rem;
     }
 
     button {
-        width: 50%;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    #score, #level {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive Styles for Phones */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #quiz-section {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #question-title {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    button {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    #score, #level {
+        font-size: 1rem;
+    }
+
+    .balloon {
+        font-size: 2rem;
+    }
+}
+
+/* General Mobile Enhancements */
+@media (orientation: landscape) and (max-width: 600px) {
+    header {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #quiz-section {
+        padding: 8px;
+    }
+
+    button {
+        padding: 5px 12px;
+        font-size: 0.7rem;
     }
 }
