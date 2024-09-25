@@ -60,7 +60,7 @@ function generateQuestion() {
             options = generateOptions(currentCorrectAnswer, "orbital period");
             break;
         case 3:
-            question = `What telescope diccovered the planet ${planet.pl_name}?`;
+            question = `What telescope discovered the planet ${planet.pl_name}?`;
             currentCorrectAnswer = planet.disc_telescope ? planet.disc_telescope.toString() : "Unknown";
             options = generateOptions(currentCorrectAnswer, "discovery telescope");
             break;
@@ -146,8 +146,21 @@ function submitAnswer() {
 function speakPageContent() {
     // Check if the browser supports the Web Speech API
     if ('speechSynthesis' in window) {
-        // Get all the text content from the page
-        let textToRead = document.body.innerText;
+        // Stop any ongoing speech
+        window.speechSynthesis.cancel();
+        
+        // Get the question text
+        let question = document.getElementById('question-title').innerText;
+
+        // Get the options text by selecting all child elements of the options-container
+        let optionsContainer = document.getElementById('options-container');
+        let options = optionsContainer.getElementsByTagName('label'); // Assuming options are within label elements
+
+        // Combine the question and options into a single string
+        let textToRead = question + ". The options are: ";
+        for (let i = 0; i < options.length; i++) {
+            textToRead += (i + 1) + ". " + options[i].innerText + ". ";
+        }
 
         // Create a new SpeechSynthesisUtterance object
         let utterance = new SpeechSynthesisUtterance(textToRead);

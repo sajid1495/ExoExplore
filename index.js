@@ -61,6 +61,9 @@ function homepage() {
 function speakPlanetData() {
     // Check if the browser supports the Web Speech API
     if ('speechSynthesis' in window) {
+        // Stop any ongoing speech
+        window.speechSynthesis.cancel();
+        
         // Get the text content from the div with id 'planetData'
         let textToRead = document.getElementById('planetData').innerText;
 
@@ -85,6 +88,7 @@ function speakPlanetData() {
         alert("Your browser does not support text-to-speech.");
     }
 }
+
 
 // Function to show the developer info modal
 function showDevInfo() {

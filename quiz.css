@@ -200,6 +200,7 @@ p {
     #quiz-section {
         max-width: 100%;
         padding: 10px;
+        margin: 100px 0;
     }
 
     #question-title {
@@ -214,6 +215,7 @@ p {
     button {
         padding: 6px 14px;
         font-size: 0.8rem;
+        margin-top: 0;
     }
 
     #score, #level {
