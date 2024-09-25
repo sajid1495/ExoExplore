@@ -132,7 +132,7 @@ function submitAnswer() {
         document.getElementById('quiz-section').innerHTML = `
             <div id="congratulations">
                 <span class="balloon">🎈</span>
-                    Congratulations!
+                    Congrats!
                 <span class="balloon">🎈</span>
             </div>
             <h2>You are one level up.</h2>
