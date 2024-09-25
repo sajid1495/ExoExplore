@@ -29,16 +29,14 @@ function generateQuestion() {
     }
     
     let plIndex = Math.floor(Math.random() * exoplanets.length);  // Use the correct length of the exoplanets array
-    console.log(plIndex);
     const planet = exoplanets[plIndex];
-    console.log(planet);
     
     if (!planet) {
         console.error("Invalid planet data.");
         return;
     }
 
-    const questionType = Math.floor(Math.random() * 3); // Randomly select a question type
+    const questionType = Math.floor(Math.random() * 5); // Randomly select a question type
     const questionContainer = document.getElementById("question-title");
     const optionsContainer = document.getElementById("options-container");
 
@@ -61,6 +59,16 @@ function generateQuestion() {
             currentCorrectAnswer = planet.pl_orbper ? planet.pl_orbper.toString() : "Unknown";
             options = generateOptions(currentCorrectAnswer, "orbital period");
             break;
+        case 3:
+            question = `What telescope diccovered the planet ${planet.pl_name}?`;
+            currentCorrectAnswer = planet.disc_telescope ? planet.disc_telescope.toString() : "Unknown";
+            options = generateOptions(currentCorrectAnswer, "discovery telescope");
+            break;
+        case 4:
+            question = `The density of the planet ${planet.pl_name} is in g/cc-`;
+            currentCorrectAnswer = planet.pl_dens ? planet.pl_dens.toString() : "Unknown";
+            options = generateOptions(currentCorrectAnswer, "density");
+            break;
     }
 
     // Display the question and options
@@ -81,6 +89,12 @@ function generateOptions(correctAnswer, type) {
             break;
         case "orbital period":
             wrongAnswers = [15.0, 35.0, 50.0]; // Example wrong orbital periods
+            break;
+        case "discovery telescope":
+            wrongAnswers = ["0.1 m UV Telescope","James Webb Space Telescope", "Hubble Space Telescope"]; // Example wrong years
+            break;
+        case "density":
+            wrongAnswers = [7.2, 7.5, 12.5]; // Example wrong orbital periods
             break;
     }
     wrongAnswers.push(correctAnswer);
@@ -150,117 +164,3 @@ function speakPageContent() {
         alert("Your browser does not support text-to-speech.");
     }
 }
-
-
-
-
-
-
-
-
-
-
-// let score = 0
-// let level = 1
-
-// let Score = document.getElementById("score")
-// Score.textContent += score
-
-// let Level = document.getElementById('level')
-// Level.textContent += level
-
-// const questions = [
-//     {
-//         question: "What is an exoplanet?",
-//         options: ["A planet within our solar system", "A planet that orbits a star outside our solar system", "A dwarf planet within the Kuiper Belt", "A moon of a gas giant planet"],
-//         correctAnswer: 1
-//     },
-//     {
-//         question: "Which of the following exoplanet types is most similar to Earth in terms of size and composition?",
-//         options: ["Hot Jupiter", "Super-Earth", "Gas giant", "Ice giant"],
-//         correctAnswer: 1
-//     },
-// ];
-
-
-// let currentQuestionIndex = 0;
-
-// function loadQuestion() {
-//     const currentQuestion = questions[currentQuestionIndex];
-//     document.getElementById("question-title").textContent = currentQuestion.question;
-
-//     const optionsContainer = document.getElementById("options-container");
-//     optionsContainer.innerHTML = ''; 
-
-//     currentQuestion.options.forEach((option, index) => {
-//         const optionElement = document.createElement("div");
-//         optionElement.classList.add("option");
-//         optionElement.innerHTML = `
-//             <input type="radio" name="option" value="${index}" id="option${index}">
-//             <label for="option${index}">${option}</label>
-//         `;
-//         optionsContainer.appendChild(optionElement);
-//     });
-// }
-
-// function submitAnswer() {
-//     const selectedOption = document.querySelector('input[name="option"]:checked');
-//     if (selectedOption) {
-//         const answerIndex = parseInt(selectedOption.value);
-//         const currentQuestion = questions[currentQuestionIndex];
-
-//         if (answerIndex === currentQuestion.correctAnswer) {
-//             alert("Correct!");
-//             score += 10
-//             Score.innerText = "Total Score:" + score
-//         } else {
-//             alert("Incorrect. The correct answer was " + currentQuestion.options[currentQuestion.correctAnswer]);
-//         }
-
-//         currentQuestionIndex++;
-//         if (currentQuestionIndex < questions.length) {
-//             loadQuestion();
-//         } else {
-//             alert("Quiz Completed!");
-//             level += 1
-//             Level.innerText = "Level:" + level
-//             document.getElementById('quiz-section').innerHTML = `
-//             <div id="congratulations">
-//                 <span class="balloon">🎈</span>
-//                     Congratulations!
-//                 <span class="balloon">🎈</span>
-//             </div>
-//             <h2>You are one level up.</h2>
-//             <a href="index.html"><button>Homepage</button></a>
-//             `
-//         }
-//     } else {
-//         alert("Please select an option.");
-//     }
-// }
-
-// function homepage() {
-//     document.getElementById("exoplanet-section").style.display = "none";
-
-//     document.getElementById("menu").style.display = "block";
-// }
-
-
-// function showHomepageButton() {
-//     const quizSection = document.getElementById("quiz-section");
-
-//     document.getElementById("submit-button").style.display = "none";
-
-//     const homeButton = document.createElement("button");
-//     homeButton.textContent = "Go to Homepage";
-//     homeButton.onclick = function () {
-//         window.location.href = 'index.html';
-//     };
-
-//     quizSection.appendChild(homeButton);
-// }
-
-// window.onload = loadQuestion;
-
-
-
