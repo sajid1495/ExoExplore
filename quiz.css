@@ -1,0 +1,246 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(images/bg.webp);
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Prevent overflow and fit the content inside the viewport */
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Hide any horizontal overflow */
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+#quiz-section {
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    padding: 10px; /* Adjust padding for smaller screens */
+}
+
+button {
+    width: auto; /* Let buttons resize automatically */
+    padding: 10px 15px;
+}
+
+label {
+    width: 100%; /* Ensure labels don't exceed the container width */
+    display: block;
+    padding: 10px;
+}
+
+
+
+header {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Main Quiz Section */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+}
+
+#quiz-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+#question-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+label {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+label:hover {
+    background-color: #e0e0e0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#submit-button {
+    margin-right: 10px;
+}
+
+#submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+/* Score & Level */
+#score, #level {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Congratulations Section */
+#congratulations {
+    font-size: 2rem;
+    color: #4caf50;
+    margin-top: 20px;
+}
+
+.balloon {
+    font-size: 2.5rem;
+    margin: 0 10px;
+}
+
+/* Responsive Styles for Tablets */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #quiz-section {
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    #question-title {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    #score, #level {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive Styles for Phones */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #quiz-section {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #question-title {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    button {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    #score, #level {
+        font-size: 1rem;
+    }
+
+    .balloon {
+        font-size: 2rem;
+    }
+}
+
+/* General Mobile Enhancements */
+@media (orientation: landscape) and (max-width: 600px) {
+    header {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #quiz-section {
+        padding: 8px;
+    }
+
+    button {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+}
