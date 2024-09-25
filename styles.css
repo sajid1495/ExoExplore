@@ -16,6 +16,19 @@ body {
     color: #fff;
 }
 
+/* Prevent overflow and fit the content inside the viewport */
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Hide any horizontal overflow */
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
 header {
     text-align: center;
     margin-bottom: 20px;
