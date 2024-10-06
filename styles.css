@@ -16,10 +16,10 @@ body {
     color: #fff;
 }
 
-/* Prevent overflow and fit the content inside the viewport */
+
 body, html {
     width: 100%;
-    overflow-x: hidden; /* Hide any horizontal overflow */
+    overflow-x: hidden; 
     margin: 0;
     padding: 0;
 }
@@ -70,18 +70,15 @@ h3 span{
     margin: auto;
 }
 
-/* Basic container styling */
+
 .planet-data {
     display: flex;
     flex-direction: column;
-    /* Adds space between bricks */
     max-width: 500px;
-    /* Adjust as needed */
     margin: 0 auto;
-    /* Centers the container */
 }
 
-/* Styling each "brick" */
+
 .planet-data p {
     background-color: #f2f2f2;
     border: 2px solid #ccc;
@@ -93,10 +90,10 @@ h3 span{
     font-size: 20px;
     color: orangered;
     transition: transform 0.3s ease;
-    /* For hover effect */
+
 }
 
-/* Optional: Hover effect on each brick */
+
 .planet-data p:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
@@ -132,7 +129,7 @@ button:hover {
         0 0 50px cyan, 0 0 100px cyan;
 }
 
-/* Button at the bottom right corner */
+
 .dev-info-btn {
     position: fixed;
     bottom: 20px;
@@ -151,7 +148,7 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Modal background (hidden by default) */
+
 .dev-info-modal {
     display: none;
     position: fixed;
@@ -163,7 +160,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Modal content */
+
 .dev-info-content {
     background-color: white;
     margin: 15% auto;
@@ -174,7 +171,6 @@ button:hover {
     text-align: center;
 }
 
-/* Close button */
 .close-btn {
     color: #aaa;
     float: right;
@@ -236,7 +232,7 @@ p{
     }
 }
 
-/* Responsive Styles for Tablets */
+
 @media (max-width: 768px) {
     header {
         padding: 15px;
@@ -265,7 +261,7 @@ p{
     }
 }
 
-/* Responsive Styles for Phones */
+
 @media (max-width: 480px) {
     header {
         padding: 10px;
@@ -303,7 +299,7 @@ p{
     }
 }
 
-/* General Mobile Enhancements */
+
 @media (orientation: landscape) and (max-width: 600px) {
     header {
         padding: 8px;
